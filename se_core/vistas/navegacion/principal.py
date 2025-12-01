@@ -20,5 +20,9 @@ def iniciarSesion(request):
     return render(request, 'se_core/login.html')
 
 
+def inicioSesion(request):
+    return HttpResponse("Iniciando Sesión... en construcción")
+
+
 def registrarme(request):
     return render(request, 'se_core/registro.html')

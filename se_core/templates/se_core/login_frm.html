@@ -3,4 +3,10 @@
 
 {% block contenido %}
     <h1 style="width: 100%; text-align: center;">INICIO DE SESIÓN</h1>
+    <form action="{% url 'login' %}">
+      {% csrf_token %}
+      <input type="email" name="correo" placeholder="Correo" required>
+      <input type="password" name="clave" placeholder="Contraseña" required>
+      <input type="submit">
+    </form>
 {% endblock %}
