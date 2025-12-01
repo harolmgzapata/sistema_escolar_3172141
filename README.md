@@ -67,8 +67,10 @@ Antes de iniciar el aplicativo realizar los siguientes pasos:
      queda cifrada sin posibilidad de recuperación.
 
 5. Estructura del proyecto:
+   
    notación * (d): directorio o carpeta
             * (a): archivo
+   
    |- (d) sistema_escolar_3172141
           |- (d) envse
           |- (d) se
