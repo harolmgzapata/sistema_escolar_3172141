@@ -1,7 +1,7 @@
 from django.urls import path, include
 from django.contrib.auth import authenticate, login, logout
 
-from se_core.vistas.navegacion.principal import index, acercaDe, contactanos, misionYVision, iniciarSesion, registrarme
+from se_core.vistas.navegacion.principal import index, acercaDe, contactanos, misionYVision, iniciarSesion, inicioSesion, registrarme
 
 urlpatterns = [
     # rutas de navegación inicial
