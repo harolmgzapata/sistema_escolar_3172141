@@ -1,1 +1,9 @@
+### Variables de entorno - Ambientes Virtuales
 envse
+venv
+.env
+
+*.log
+*.pot
+*.pyc
+__pycache__/

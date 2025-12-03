@@ -1,3 +1,40 @@
+# Sistema Escolar 3172141
+
+[![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+
+## Configuración del Entorno (.env)
+
+### Paso a Paso para Crear el Archivo .env
+
+1. **Crear el archivo** en la raíz del proyecto:
+```bash
+touch .env
+```
+2. **Abrir el archivo** con tu editor favorito:
+```bash
+vim .env
+```
+3. **Copiar y pegar** las variables de enorno:
+```
+# ============================================
+# DJANGO CONFIGURATION
+# ============================================
+SECRET_KEY=tu_clave_secreta_muy_segura_aqui_cambiar_por_una_real
+DEBUG=True
+
+# ============================================
+# POSTGRESQL DATABASE
+# ============================================
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+```
+## Configuración del Proyecto
+
+### Paso a Paso para correr el aplicativo
+
 Nota para este instructivo:
       Se asume que se tienen instalados, o se instalarán -
       el lenguaje de programación Python versión 3.13.5 o superior, el SGBD MySQL 
@@ -12,8 +49,7 @@ Nota para este instructivo:
 
 Antes de iniciar el aplicativo realizar los siguientes pasos:
 
-1. Creación de la base de datos MySQL
-   En Workbench:
+**1. Creación de la base de datos MySQL** En Workbench:
    - En el menú 'File' seleccionar: 'Open SQL Script...'
    - En la ventana de dialogo modal 'Open SQL Script': Ubicarse en la carpeta 
      'C:\...\sistema_escolar_3172141>',
@@ -30,7 +66,7 @@ Antes de iniciar el aplicativo realizar los siguientes pasos:
      el script 'script_inserciones.txt' de la misma forma que se abrió y ejecutó 
      el script 'script_creacion_bd.txt'.
 
-2. Creación del ambiente virtual
+**2. Creación del ambiente virtual**
    En VS Code:
    - Abrir una terminal 'Command Prompt'
    - En la carpeta raíz 'sistema_escolar_3172141' ejecutar
@@ -45,25 +81,40 @@ Antes de iniciar el aplicativo realizar los siguientes pasos:
    - Instalar el framework y el controlador de la base de datos con 
      el comando 'pip install -r requirements.txt' sin las comillas
 
-2. Realizar migración a la base de datos de las tablas
-   - en el Command Prompt ejecutar el comando 'python manage.py makemigrations' sin las comillas
-   - en el Command Prompt ejecutar el comando 'python manage.py migrate' sin las comillas
+**3. Realizar migración a la base de datos de las tablas**
+   - en el Command Prompt ejecutar el comando:
+        ```bash
+        python manage.py makemigrations
+        ```
 
-3. Crear los modelos a partir de las tablas de la bd:
-   - En el Command Prompt ejectuar el comando
-     'python manage.py inspectdb paises departamentos ciudades
+   - en el Command Prompt ejecutar el comando:
+        ```bash
+        python manage.py migrate
+        ```
+
+**4. Crear los modelos a partir de las tablas de la bd:**
+   - En el Command Prompt ejectuar el comando:
+
+        ```bash
+        python manage.py inspectdb paises departamentos ciudades
       tipos_documento generos estratos estado_civil nivel_educativo
       aulas areas grados asignaturas grupos roles usuarios temas
-      perfil_usuario > se_core/models.py'
+      perfil_usuario > se_core/models.py
+        ```
 
-4. Crear el superusuario de django
-   - en el Command Prompt ejecutar el comando 'python manage.py createsuperuser'
+
+**5. Crear el superusuario de django**
+   - en el Command Prompt ejecutar el comando:
+
+        ```bash
+        python manage.py createsuperuser
+        ```
      y digitar los campos solicitados.  Cuando se solicita la contraseña no va 
      a visualizar lo que esté digitando por lo que es muy importante que
      recuerde el orden de las teclas que presiona y no olvidar que la contraseña
      queda cifrada sin posibilidad de recuperación.
 
-5. Estructura del proyecto:
+**6. Estructura del proyecto:**
    notación * (d): directorio o carpeta
             * (a): archivo
    |- (d) sistema_escolar_3172141

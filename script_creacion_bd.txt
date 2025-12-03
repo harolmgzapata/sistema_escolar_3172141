@@ -54,7 +54,7 @@ CREATE TABLE nivel_educativo (id INT NOT NULL AUTO_INCREMENT,
 CREATE TABLE aulas (id INT NOT NULL AUTO_INCREMENT,
                    nombre VARCHAR(50) NOT NULL UNIQUE,
                    capacidad INT NOT NULL CHECK (capacidad >= 0),
-                   estado VARCHAR(20) NOT NULL UNIQUE,
+                   estado VARCHAR(20) NOT NULL,
                    PRIMARY KEY (id));
 
 -- Tabla de areas educativas
@@ -80,8 +80,8 @@ CREATE TABLE asignaturas (id INT NOT NULL AUTO_INCREMENT,
                           FOREIGN KEY (grado_id) REFERENCES grados(id));
 
 -- Tabla de grupos
-CRATE TABLE grupos (id INT NOT NULL AUTO_INCREMENT,
-                    nombre VARCHAR() NOT NULL UNIQUE,
+CREATE TABLE grupos (id INT NOT NULL AUTO_INCREMENT,
+                    nombre VARCHAR(50) NOT NULL UNIQUE,
                     aula_id INT NOT NULL,
                     grado_id INT NOT NULL,
                     PRIMARY KEY (id),
@@ -116,16 +116,16 @@ CREATE TABLE temas (id INT NOT NULL AUTO_INCREMENT,
                     FOREIGN KEY (asignatura_id) REFERENCES asignaturas(id));
 
 -- Tabla de perfiles de usuarios
-CRATE TABLE perfil_usuario (id INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE perfil_usuario (id INT NOT NULL AUTO_INCREMENT,
                             primer_nombre VARCHAR(25) NOT NULL,
                             segundo_nombre VARCHAR(25),
                             primer_apellido VARCHAR(25) NOT NULL,
                             segundo_apellido VARCHAR(25),
                             direccion1 VARCHAR(128) NOT NULL,
-                            direccion2 VARCHAR(),
+                            direccion2 VARCHAR(128),
                             ciudad_id INT NOT NULL,
                             usuario_id INT NOT NULL,
-                            especialidad VARCHAR(),
+                            eespecialidad VARCHAR(100),
                             grupo_id INT NOT NULL,
                             foto VARCHAR(128) DEFAULT 'no_imagen.png',
                             PRIMARY KEY (id),

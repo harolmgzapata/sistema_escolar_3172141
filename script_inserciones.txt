@@ -2,7 +2,7 @@
 -- de la base de datos 'sistema_escolar'
 
 -- ***************** NIVELES EDUCATIVOS ****************
-INSERT INTO niveleducativo (nombre) VALUES
+INSERT INTO nivel_educativo (nombre) VALUES
     ('Primero'), ('Segundo'), ('Tercero'),
     ('Cuarto'), ('Quinto');
 
@@ -212,7 +212,7 @@ INSERT INTO ciudades (nombre, departamento_id) VALUES
 -- *********************************************************
 
 -- ********************** GÉNEROS **************************
-INSERT INTO genero (nombre) VALUES
+INSERT INTO generos (nombre) VALUES
     ('Masculino'), ('Femenino');
 -- *********************************************************
 
@@ -234,7 +234,7 @@ INSERT INTO estratos (nombre) VALUES
 -- *********************************************************
 
 -- ***************** TIPOS DE DOCUMENTO ********************
-INSERT INTO tipo_documento (nombre) VALUES
+INSERT INTO tipos_documento (nombre) VALUES
     ('Registro Civil de Nacimiento'),
     ('Tarjeta de Identidad'),
     ('Cédula de Ciudadanía'),
